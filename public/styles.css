@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Spectral:400,400i&display=swap');
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.15;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+a {
+  color: #f07328;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Spectral', serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.authorName {
+  color: #111111;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  line-height: 1.25;
+}
+
+.authorTitle {
+  color: #001f3f;
+  font-style: italic;
+  font-size: 2.25rem;
+  line-height: 1.50;
+  margin-top: 0;
+}
+
+.bio {
+  line-height: 1.5;
+}
+
+.author,
+.bio {
+  padding: 0 1rem;
+  max-width: 30rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 60rem) {
+  main {
+    width: 50%;
+  }
+
+  .author,
+  .bio {
+    padding: 0;
+  }
+
+  .authorName {
+    font-size: 6rem;
+    line-height: 1;
+  }
+  
+  .authorTitle {
+    font-size: 3rem;
+    line-height: 1.25;
+  }
+
+  .bio {
+    font-size: 18px;
+  }
+}
