@@ -23,10 +23,12 @@ a {
 
 body {
   margin: 0;
-}
-
-main {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
@@ -41,15 +43,6 @@ h4,
 h5,
 h6 {
   font-family: 'Spectral', serif;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
 }
 
 .authorName {
@@ -72,21 +65,21 @@ main {
   line-height: 1.5;
 }
 
-.author,
-.bio {
+.box {
   padding: 0 1rem;
+  margin-bottom: 1rem;
   max-width: 30rem;
   width: 100%;
 }
 
 .js-toggle {
+  background: #fff;
   border: solid 1px rgba(0,0,0,0.102);
   height: 3rem;
   line-height: 3rem;
   padding: 0 1.5rem;
   font-size: 1em;
   font-family: 'Spectral', serif;
-  margin-top: 1.5rem;
 }
 
 .js-toggle:hover {
@@ -101,12 +94,11 @@ main {
 }
 
 @media screen and (min-width: 60rem) {
-  main {
+  body {
     width: 50%;
   }
 
-  .author,
-  .bio {
+  .box {
     padding: 0;
   }
 
