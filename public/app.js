@@ -14,5 +14,5 @@ function toggleDarkMode () {
   ui.toggle.textContent = isDark ? 'Dark Mode' : 'Light Mode'
   isDark = !isDark
 
-  localStorage.isDark = isDark
+  localStorage.isDark = classes
 }
