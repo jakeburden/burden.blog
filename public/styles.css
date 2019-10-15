@@ -60,6 +60,11 @@ h6 {
   font-family: 'Spectral', serif;
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .authorName {
   color: #111111;
   font-size: 3rem;
@@ -93,10 +98,6 @@ h6 {
 .dark .bio {
   color: #fff;
   background: #000;
-}
-
-.ding-analytics-ui {
-  margin-top: 1rem;
 }
 
 @media screen and (min-width: 60rem) {
