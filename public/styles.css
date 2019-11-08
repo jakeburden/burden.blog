@@ -18,9 +18,6 @@ html {
   html { font-family: 'Inter var', sans-serif; }
 }
 
-a {
-  color: #f07328;
-}
 
 body {
   margin: 0;
@@ -82,6 +79,12 @@ footer {
   margin-bottom: 0;
 }
 
+.avatar {
+  max-height: 120px;
+  max-width: 120px;
+  border-radius: 50%;
+}
+
 .bio {
   line-height: 1.5;
 }
@@ -98,6 +101,18 @@ footer {
 .dark .bio {
   color: #fff;
   background: #000;
+}
+
+.link {
+  border-radius: 5px;
+  background: rgb(34, 34, 34);
+  color: #fff;
+  padding: 4px 8px;
+  text-decoration: none;
+}
+
+.link.gitlab:hover {
+  background-color: #f07328;
 }
 
 @media screen and (min-width: 60rem) {
