@@ -86,7 +86,7 @@ footer {
 }
 
 .bio {
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 .box {
@@ -113,6 +113,14 @@ footer {
 
 .link.gitlab:hover {
   background-color: #f07328;
+}
+
+.link.digitalsurgeons:hover {
+  background-color: #f72073;
+}
+
+.link.qscend:hover {
+  background-color: #024ea0;
 }
 
 @media screen and (min-width: 60rem) {
