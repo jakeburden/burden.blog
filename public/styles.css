@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Spectral:400,400i&display=swap');
-@import url('https://rsms.me/inter/inter.css');
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
 
 html {
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
   line-height: 1.15;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -14,106 +16,12 @@ html {
   box-sizing: inherit;
 }
 
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
-}
-
-
-body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-button {
-  background: #fff;
-  border: solid 1px rgba(0,0,0,0.102);
-  height: 3rem;
-  line-height: 3rem;
-  padding: 0 1.5rem;
-  font-size: 1rem;
-  font-family: 'Spectral', serif;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Spectral', serif;
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.authorName {
-  color: #111111;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  margin-top: 0;
-  line-height: 1.25;
-}
-
-.authorTitle {
-  color: #001f3f;
-  font-style: italic;
-  font-size: 2.25rem;
-  line-height: 1.50;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.avatar {
-  max-height: 120px;
-  max-width: 120px;
-  border-radius: 50%;
-}
-
-.bio {
-  line-height: 1.9;
-}
-
 .box {
-  padding: 0 1rem;
-  margin-bottom: 1rem;
-  max-width: 30rem;
-  width: 100%;
-}
-
-.dark,
-.dark .author *,
-.dark .bio {
-  color: #fff;
-  background: #000;
+  @apply max-w-lg w-full mb-4 py-0 px-4;
 }
 
 .link {
-  border-radius: 5px;
-  background: rgb(34, 34, 34);
-  color: #fff;
-  padding: 4px 8px;
-  text-decoration: none;
+ @apply rounded bg-gray-900 text-white py-1 px-2 no-underline
 }
 
 .link.gitlab:hover {
@@ -126,29 +34,4 @@ footer {
 
 .link.qscend:hover {
   background-color: #024ea0;
-}
-
-@media screen and (min-width: 60rem) {
-  main {
-    flex-direction: row;
-  }
-
-  .box {
-    padding: 0;
-  }
-
-  .authorName {
-    font-size: 6rem;
-    line-height: 1;
-  }
-  
-  .authorTitle {
-    font-size: 3rem;
-    line-height: 1.25;
-  }
-
-  .bio {
-    font-size: 18px;
-    line-height: 1.8;
-  }
 }
