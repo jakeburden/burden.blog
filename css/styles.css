@@ -1,0 +1,150 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "highlight.js/styles/Tomorrow-Night-Eighties.css";
+
+html,
+body {
+  box-sizing: border-box;
+  line-height: 1.15;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+html,
+body,
+#__next {
+  @apply bg-black text-white font-sans h-full w-full;
+}
+
+[data-ui-component="issue"] h2 {
+  @apply text-2xl leading-tight text-gray-200 my-3;
+}
+
+[data-ui-component="issue"] pre {
+  @apply my-3;
+}
+
+[data-ui-component="issue"] a:not(.link) {
+  @apply text-blue-500 underline;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.box {
+  @apply max-w-xl w-full mb-4 py-0 px-4;
+}
+
+.link {
+  @apply rounded bg-gray-900 text-white py-1 px-2 mx-1 no-underline;
+}
+
+.link.gitlab:hover {
+  background-color: #f07328;
+}
+
+.link.digitalsurgeons:hover {
+  background-color: #f72073;
+}
+
+.link.qscend:hover {
+  background-color: #024ea0;
+}
+
+.link.home {
+  color: #fff;
+}
+
+.link.home:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+/* Global */
+[data-ui-component="issue"] {
+  @apply leading-relaxed text-lg;
+}
+/* Headers */
+[data-ui-component="issue"] h1,
+[data-ui-component="issue"] h2 {
+  @apply my-6 font-bold;
+}
+[data-ui-component="issue"] h2 {
+  @apply text-2xl pb-1;
+  border-bottom: 1px solid #eaeaea;
+}
+[data-ui-component="issue"] h3,
+[data-ui-component="issue"] h4,
+[data-ui-component="issue"] h5,
+[data-ui-component="issue"] h6 {
+  @apply text-xl my-3 font-semibold;
+}
+/* Links */
+[data-ui-component="issue"] a {
+  @apply text-blue-600;
+}
+[data-ui-component="issue"] a:hover {
+  @apply underline;
+}
+/* Paragraph */
+[data-ui-component="issue"] p {
+  @apply mb-4;
+}
+/* Lists */
+[data-ui-component="issue"] ul,
+[data-ui-component="issue"] ol {
+  @apply mb-4 ml-8;
+}
+[data-ui-component="issue"] li > p,
+[data-ui-component="issue"] li > ul,
+[data-ui-component="issue"] li > ol {
+  @apply mb-0;
+}
+[data-ui-component="issue"] ol {
+  @apply list-decimal;
+}
+[data-ui-component="issue"] ul {
+  @apply list-disc;
+}
+/* Blockquotes */
+[data-ui-component="issue"] blockquote {
+  @apply p-0 p-2 mx-6 mb-4 border-l-4 border-gray-400 italic;
+}
+[data-ui-component="issue"] blockquote > p {
+  @apply mb-0;
+}
+/* Tables */
+[data-ui-component="issue"] td,
+[data-ui-component="issue"] th {
+  @apply px-2 py-1 border border-gray-400;
+}
+[data-ui-component="issue"] tr:nth-child(odd) {
+  @apply bg-gray-100;
+}
+[data-ui-component="issue"] table {
+  @apply mb-6;
+}
+
+[data-ui-component="issue"] code {
+  background: #161f27;
+  padding: 2.5px 5px;
+  border-radius: 6px;
+  @apply text-sm;
+}
+
+[data-ui-component="issue"] pre > code {
+  padding: 10px;
+  display: block;
+  overflow-x: auto;
+}
+
+.joypixels {
+  display: inline;
+  vertical-align: baseline;
+}
