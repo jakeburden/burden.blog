@@ -10,7 +10,8 @@ const purgecss = [
       /sh/,
       /js/,
       /jsx/,
-      /rust/
+      /rust/,
+      /bash/
     ]
   }
 ];
