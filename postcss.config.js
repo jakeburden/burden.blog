@@ -5,7 +5,7 @@ const purgecss = [
     defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
     whitelistPatterns: [
       /^hljs/,
-      /^language/,
+      /language-*/,
       /shell/,
       /sh/,
       /js/,
