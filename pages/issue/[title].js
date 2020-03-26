@@ -1,6 +1,7 @@
 import gitlab from "../../utils/gitlab";
 
 import Link from "next/link";
+import Head from "next/head";
 import slugify from "@sindresorhus/slugify";
 import hl from "highlight.js";
 import marked from "marked";
