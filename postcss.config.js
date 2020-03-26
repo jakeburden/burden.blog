@@ -13,7 +13,8 @@ const purgecss = [
       /jsx/,
       /rust/,
       /bash/
-    ]
+    ],
+    whitelistPatternsChildren: [/^token/, /^pre/, /^code/]
   }
 ];
 module.exports = {
