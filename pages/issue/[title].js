@@ -8,6 +8,7 @@ import createDOMPurify from "dompurify";
 import emoji from "emoji-toolkit";
 import strftime from "strftime";
 import { JSDOM } from "jsdom";
+import fm from "front-matter";
 
 const renderer = new marked.Renderer();
 renderer.image = function(href, title, text) {
@@ -16,20 +17,53 @@ renderer.image = function(href, title, text) {
   return `<img src=${hostHref} alt=${text} />`;
 };
 
-export default ({ title, content, comments, web_url }) => {
+export default ({ frontMatter, title, content, comments, web_url }) => {
   return (
-    <main className="container h-full w-full max-w-4xl mx-auto px-20 py-10">
-      <nav>
-        <Link href="/">
-          <a className="link home">Home</a>
-        </Link>
-      </nav>
-      <article data-ui-component="issue" className="mt-5">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl mb-3">{title}</h1>
-        <section className="leading-normal" dangerouslySetInnerHTML={content} />
-        {Comments(comments, web_url)}
-      </article>
-    </main>
+    <>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+
+        <title>Jake Burden</title>
+        <meta name="title" content={frontMatter.title} />
+        <meta name="description" content={frontMatter.description} />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={"https://burden.blog/" + slugify(frontMatter.title)}
+        />
+        <meta property="og:title" content={frontMatter.title} />
+        <meta property="og:description" content={frontMatter.description} />
+        <meta property="og:image" content={frontMatter.image} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={"https://burden.blog/"} />
+        <meta name="twitter:title" content={frontMatter.title} />
+        <meta name="twitter:description" content={frontMatter.description} />
+        <meta name="twitter:image" content={frontMatter.image} />
+
+        <link rel="stylesheet" href="/styles.css" />
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+      </Head>
+      <main className="container h-full w-full max-w-4xl mx-auto px-20 py-10">
+        <nav>
+          <Link href="/">
+            <a className="link home">Home</a>
+          </Link>
+        </nav>
+        <article data-ui-component="issue" className="mt-5">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl mb-3">{title}</h1>
+          <section
+            className="leading-normal"
+            dangerouslySetInnerHTML={content}
+          />
+          {Comments(comments, web_url)}
+        </article>
+      </main>
+    </>
   );
 };
 
@@ -47,11 +81,13 @@ export const getStaticProps = async ({ params }) => {
   const [issue] = issues.filter(issue => slugify(issue.title) === title);
   const { description, web_url } = issue;
   const comments = await gitlab.IssueNotes.all(2, issue.iid);
+  const md = fm(description);
   return {
     props: {
+      frontMatter: md.attributes,
       title: issue.title,
       web_url,
-      content: createMarkup(description),
+      content: createMarkup(md.body),
       comments: comments
         .filter(comment => !comment.system)
         .map(comment => {
