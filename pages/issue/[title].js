@@ -39,7 +39,14 @@ export default ({ frontMatter, title, content, comments, web_url }) => {
         />
         <meta property="og:title" content={frontMatter.title} />
         <meta property="og:description" content={frontMatter.description} />
-        <meta property="og:image" content={frontMatter.image} />
+        <meta
+          property="og:image"
+          content={
+            "https://burden.blog/" +
+            slugify(frontMatter.title) +
+            frontMatter.image
+          }
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -48,7 +55,14 @@ export default ({ frontMatter, title, content, comments, web_url }) => {
         />
         <meta name="twitter:title" content={frontMatter.title} />
         <meta name="twitter:description" content={frontMatter.description} />
-        <meta name="twitter:image" content={frontMatter.image} />
+        <meta
+          name="twitter:image"
+          content={
+            "https://burden.blog/" +
+            slugify(frontMatter.title) +
+            frontMatter.image
+          }
+        />
 
         <link rel="stylesheet" href="/styles.css" />
 
