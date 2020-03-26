@@ -26,7 +26,9 @@ export default ({ frontMatter, title, content, comments, web_url }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 
-        <title>Jake Burden</title>
+        <title>
+          {frontMatter.title} - {frontMatter.description}
+        </title>
         <meta name="title" content={frontMatter.title} />
         <meta name="description" content={frontMatter.description} />
 
