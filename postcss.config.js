@@ -3,17 +3,8 @@ const purgecss = [
   {
     content: ["./components/**/*.js", "./pages/**/*.js"],
     defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-    whitelist: ['[data-ui-component="issue"] pre > code'],
-    whitelistPatterns: [
-      /^hljs/,
-      /language-*/,
-      /shell/,
-      /sh/,
-      /js/,
-      /jsx/,
-      /rust/,
-      /bash/
-    ],
+    whitelist: [".sh", ".js", ".jsx", ".rust", ".bash", ".shell"],
+    whitelistPatterns: [/^hljs/, /language-*/],
     whitelistPatternsChildren: [/^token/, /^pre/, /^code/]
   }
 ];
