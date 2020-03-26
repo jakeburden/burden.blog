@@ -42,7 +42,10 @@ export default ({ frontMatter, title, content, comments, web_url }) => {
         <meta property="og:image" content={frontMatter.image} />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={"https://burden.blog/"} />
+        <meta
+          name="twitter:url"
+          content={"https://burden.blog/" + slugify(frontMatter.title)}
+        />
         <meta name="twitter:title" content={frontMatter.title} />
         <meta name="twitter:description" content={frontMatter.description} />
         <meta name="twitter:image" content={frontMatter.image} />
