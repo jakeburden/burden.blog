@@ -5,7 +5,7 @@ const purgecss = [
     defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
     whitelist: [".sh", ".js", ".jsx", ".rust", ".bash", ".shell", ".joypixels"],
     whitelistPatterns: [/^hljs/, /language-*/],
-    whitelistPatternsChildren: [/^token/, /^pre/, /^code/]
+    whitelistPatternsChildren: [/^token/, /^pre/, /^code/, /^blockquote/]
   }
 ];
 module.exports = {
