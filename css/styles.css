@@ -155,11 +155,6 @@ blockquote {
   margin: 0;
   padding-left: 1em;
 }
-/* Images */
-img {
-  border: 3px solid #ececec;
-  max-width: 100%;
-}
 
 pre {
   line-height: 1.4;

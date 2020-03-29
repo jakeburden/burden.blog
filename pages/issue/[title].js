@@ -60,7 +60,7 @@ export default ({ frontMatter, title, content, comments, web_url }) => {
 
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
-      <main className="container h-full w-full max-w-4xl mx-auto md:px-20 py-10">
+      <main className="container h-full w-full max-w-4xl mx-auto px-5 md:px-20 py-10">
         <nav>
           <Link href="/">
             <a className="link home">Home</a>
