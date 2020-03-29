@@ -148,3 +148,32 @@ body,
   display: inline;
   vertical-align: baseline;
 }
+
+blockquote {
+  border-left: 3px solid blue;
+  color: #737373;
+  margin: 0;
+  padding-left: 1em;
+}
+/* Images */
+img {
+  border: 3px solid #ececec;
+  max-width: 100%;
+}
+
+pre {
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+.highlight pre ::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  font-size: 100%;
+  padding: 0;
+}
