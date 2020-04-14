@@ -33,80 +33,65 @@ export default ({ issues }) => {
 
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
-      <main className="container mx-auto py-10 flex flex-col-reverse lg:flex-row h-full w-full justify-around">
-        <section>
-          <header className="box lg:p-0 lg:mb-8 flex items-center lg:items-end">
+      <main className="h-full w-full">
+        <section className="container mx-auto py-10 px-4">
+          <header className="mb-4 lg:p-0 md:mb-8 flex items-center lg:items-end">
             <img
-              className="rounded-full w-20 lg:w-32 mr-3 lg:mr-5"
+              className="rounded-full w-20 md:w-32 mr-3  md:mr-5"
               src="/jake-burden.jpg"
               alt="Profile picture of Jake Burden"
             />
             <div>
-              <h1 className="text-3xl lg:text-5xl leading-tight lg:leading-none mt-0 lg:mb-4 font-thin">
+              <h1 className="text-3xl md:text-5xl leading-tight md:leading-none mt-0 md:mb-4 font-thin">
                 Jake Burden
               </h1>
-              <h2 className="text-base lg:text-2xl leading-normal lg:leading-tight my-0 lg:mb-4 font-bold uppercase tracking-wide text-gray-400">
+              <h2 className="text-base md:text-2xl leading-normal md:leading-tight my-0 md:mb-4 font-bold uppercase tracking-wide text-gray-400">
                 Software Engineer
               </h2>
             </div>
           </header>
-          <div className="box leading-loose lg:text-lg lg:p-0">
-            <p>
-              I'm currently engineering solutions for
-              <a
-                className="link gitlab"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://about.gitlab.com"
-              >
-                GitLab
-              </a>
-              .
-            </p>
-            <p>
-              Previously, I was at
-              <a
-                className="link digitalsurgeons"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://digitalsurgeons.com"
-              >
-                Digital Surgeons
-              </a>
-              , using design thinking to help clients grow their businesses.
-              Before that, I was at
-              <a
-                className="link qscend"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.qscend.com/"
-              >
-                QScend
-              </a>
-              , building municipal websites to help citizens.
-            </p>
-            <p>
-              In parallel with my previous roles, I received a degree in
-              Philosophy.
-            </p>
+          <div className="leading-loose text-lg md:text-3xl lg:text-5xl lg:p-0">
+            <ul>
+              <li>
+                💻 Frontend Engineer at{" "}
+                <a className="link gitlab" href="https://about.gitlab.com">
+                  GitLab
+                </a>
+              </li>
+              <li>🎓 Bachelor of Arts degree in Philosophy</li>
+              <li>
+                🙌 Previously worked at{" "}
+                <a
+                  className="link digitalsurgeons"
+                  href="https://digitalsurgeons.com"
+                >
+                  Digital Surgeons
+                </a>{" "}
+                and{" "}
+                <a className="link qscend" href="https://qscend.com">
+                  QScend
+                </a>
+              </li>
+              <li>🌎 Working Remotely</li>
+            </ul>
           </div>
         </section>
-        <section>
-          <h2 className="box leading-loose lg:p-0 lowercase text-2xl font-extrabold mb-4 text-indigo-200 font-mono">
+        <section className="container mx-auto py-10 px-4">
+          <h2 className="leading-loose text-xl md:text-3xl lg:p-0 text-indigo-200 font-mono">
             Issues
           </h2>
-          <ul className="box leading-loose lg:text-lg lg:px-0">
-            {issues.map(issue => (
+          <ul className="md:text-3xl lg:px-0">
+            {issues.map((issue) => (
               <li key={issue.iid}>
                 <Link
                   href="/issue/[title]"
                   as={`/issue/${slugify(issue.title)}`}
                 >
-                  <a className="block mt-1 text-lg leading-tight font-semibold hover:underline">
+                  <a className="block mt-1 leading-tight font-semibold hover:underline">
                     #{issue.id}: {issue.title}
                   </a>
                 </Link>
-                <date className="text-base">
+                <date className="text-base md:text-lg">
                   {strftime(" %B %d, %Y", new Date(issue.created_at))}
                 </date>
               </li>
@@ -114,6 +99,10 @@ export default ({ issues }) => {
           </ul>
         </section>
       </main>
+      <footer
+        className="bg-fixed bg-cover bg-center bg-no-repeat flex justify-center items-center h-full"
+        style={{ backgroundImage: "url(/jake-burden-presenting.jpg)" }}
+      ></footer>
     </>
   );
 };
@@ -122,7 +111,7 @@ export const getStaticProps = async () => {
   const issues = await gitlab.Issues.all(2);
   return {
     props: {
-      issues
-    }
+      issues,
+    },
   };
 };
