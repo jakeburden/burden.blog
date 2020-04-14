@@ -33,7 +33,7 @@ export default ({ issues }) => {
 
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
-      <main className="h-full w-full">
+      <main className="h-screen w-full">
         <section className="container mx-auto py-10 px-4">
           <header className="mb-4 lg:p-0 md:mb-8 flex items-center lg:items-end">
             <img
@@ -100,7 +100,7 @@ export default ({ issues }) => {
         </section>
       </main>
       <footer
-        className="bg-fixed bg-cover bg-center bg-no-repeat flex justify-center items-center h-full"
+        className="bg-fixed bg-cover bg-center bg-no-repeat flex justify-center items-center h-screen"
         style={{ backgroundImage: "url(/jake-burden-presenting.jpg)" }}
       ></footer>
     </>
