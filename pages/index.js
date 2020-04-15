@@ -35,7 +35,7 @@ export default ({ issues }) => {
       </Head>
       <main className="h-screen w-full">
         <section className="container mx-auto py-10 px-4">
-          <header className="mb-4 lg:p-0 md:mb-8 flex items-center lg:items-end">
+          <header className="pb-4 lg:px-0 md:pb-10 flex items-center lg:items-end">
             <img
               className="rounded-full w-20 md:w-32 mr-3  md:mr-5"
               src="/jake-burden.jpg"
@@ -76,7 +76,7 @@ export default ({ issues }) => {
             </ul>
           </div>
         </section>
-        <section className="container mx-auto py-10 px-4">
+        <section className="container mx-auto py-5 px-4">
           <h2 className="leading-loose text-xl md:text-3xl lg:p-0 text-indigo-200 font-mono">
             Issues
           </h2>
