@@ -58,7 +58,7 @@ export default ({ issues }) => {
                   GitLab
                 </a>
               </li>
-              <li>🎓 Bachelor of Arts Degree in Philosophy</li>
+              <li>🎓 Bachelor of Arts degree in Philosophy</li>
               <li>
                 🙌 Previously worked at{" "}
                 <a
