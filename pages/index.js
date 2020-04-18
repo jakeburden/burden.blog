@@ -52,8 +52,8 @@ export default ({ issues }) => {
           </header>
           <div className="leading-loose text-lg md:text-3xl lg:text-5xl lg:p-0">
             <ul>
-              <li>
-                💻 Frontend Engineer at{" "}
+              <li className="lg:text-6xl">
+                💻 I'm currently building{" "}
                 <a className="link gitlab" href="https://about.gitlab.com">
                   GitLab
                 </a>
@@ -66,7 +66,7 @@ export default ({ issues }) => {
                   href="https://digitalsurgeons.com"
                 >
                   Digital Surgeons
-                </a>{" "}
+                </a>
                 and{" "}
                 <a className="link qscend" href="https://qscend.com">
                   QScend

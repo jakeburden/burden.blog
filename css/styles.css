@@ -16,7 +16,9 @@ body {
 html,
 body,
 #__next {
-  @apply bg-black text-white font-sans h-full w-full;
+  @apply font-sans h-full w-full;
+  background-color: #111;
+  color: #eee;
 }
 
 [data-ui-component="issue"] h2 {
