@@ -53,14 +53,14 @@ export default ({ issues }) => {
           <div className="leading-loose text-lg md:text-3xl lg:text-5xl lg:p-0">
             <ul>
               <li className="lg:text-6xl">
-                💻 I'm currently building{" "}
+                💻 Currently building{" "}
                 <a className="link gitlab" href="https://about.gitlab.com">
                   GitLab
                 </a>
               </li>
-              <li>🎓 Bachelor of Arts degree in Philosophy</li>
+              <li>🎓 BA in Philosophy</li>
               <li>
-                🙌 Previously worked at{" "}
+                🙌 Previously:{" "}
                 <a
                   className="link digitalsurgeons"
                   href="https://digitalsurgeons.com"
