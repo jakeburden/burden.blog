@@ -50,7 +50,7 @@ export default ({ issues }) => {
               </h2>
             </div>
           </header>
-          <div className="leading-loose text-lg md:text-3xl lg:text-5xl lg:p-0">
+          <div className="leading-loose text-base md:text-3xl lg:text-5xl lg:p-0">
             <ul>
               <li className="lg:text-6xl">
                 💻 Currently building{" "}
