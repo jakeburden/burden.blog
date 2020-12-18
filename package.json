@@ -25,7 +25,7 @@
     "@sindresorhus/slugify": "^0.11.0",
     "autoprefixer": "^9.7.4",
     "bent": "^7.1.0",
-    "dompurify": "^2.0.8",
+    "dompurify": "^2.0.17",
     "emoji-toolkit": "^5.5.0",
     "front-matter": "^3.1.0",
     "gitlab": "^14.2.2",
