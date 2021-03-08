@@ -12,7 +12,7 @@ import { JSDOM } from "jsdom";
 import fm from "front-matter";
 
 const renderer = new marked.Renderer();
-renderer.image = function(href, title, text) {
+renderer.image = function (href, title, text) {
   const hostHref = "https://brdn.dev/blog/content" + href;
 
   return `<img src=${hostHref} alt=${text} />`;
@@ -82,15 +82,17 @@ export default ({ frontMatter, title, content, comments, web_url }) => {
 export const getStaticPaths = async () => {
   const issues = await gitlab.Issues.all(2);
   return {
-    paths: issues.map(issue => `/issue/${slugify(issue.title)}`),
-    fallback: false
+    paths: issues
+      .filter((issue) => issue.project_id === 2)
+      .map((issue) => `/issue/${slugify(issue.title)}`),
+    fallback: false,
   };
 };
 
 export const getStaticProps = async ({ params }) => {
   const { title } = params;
   const issues = await gitlab.Issues.all(2);
-  const [issue] = issues.filter(issue => slugify(issue.title) === title);
+  const [issue] = issues.filter((issue) => slugify(issue.title) === title);
   const { description, web_url } = issue;
   const comments = await gitlab.IssueNotes.all(2, issue.iid);
   const md = fm(description);
@@ -101,13 +103,13 @@ export const getStaticProps = async ({ params }) => {
       web_url,
       content: createMarkup(md.body),
       comments: comments
-        .filter(comment => !comment.system)
-        .map(comment => {
+        .filter((comment) => !comment.system)
+        .map((comment) => {
           comment.body = createMarkup(comment.body);
           return comment;
         })
-        .reverse()
-    }
+        .reverse(),
+    },
   };
 };
 
@@ -118,13 +120,13 @@ function createMarkup(markdown) {
     __html: DOMPurify.sanitize(
       emoji.shortnameToImage(
         marked(markdown, {
-          highlight: function(code, lang) {
+          highlight: function (code, lang) {
             return hl.highlight(lang, code).value;
           },
-          renderer
+          renderer,
         })
       )
-    )
+    ),
   };
 }
 
@@ -134,7 +136,7 @@ function Comments(comments, web_url) {
       <section className="mb-12 max-w-lg">
         <p>{comments.length} Comments</p>
         <div>
-          {comments.map(comment => (
+          {comments.map((comment) => (
             <div className="flex flex-row mb-8" key={comment.id}>
               <img
                 className="mr-5 h-12 w-12 rounded-full"
