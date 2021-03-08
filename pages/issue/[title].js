@@ -81,10 +81,12 @@ export default ({ frontMatter, title, content, comments, web_url }) => {
 
 export const getStaticPaths = async () => {
   const issues = await gitlab.Issues.all(2);
+  let i = issues
+    .filter((issue) => issue.project_id === 2)
+    .map((issue) => `/issue/${slugify(issue.title)}`);
+  console.log(i);
   return {
-    paths: issues
-      .filter((issue) => issue.project_id === 2)
-      .map((issue) => `/issue/${slugify(issue.title)}`),
+    paths: i,
     fallback: false,
   };
 };
