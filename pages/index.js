@@ -113,9 +113,10 @@ export default ({ issues }) => {
 
 export const getStaticProps = async () => {
   const issues = await gitlab.Issues.all(2);
+  let i = issues.filter((issue) => issue.project_id === 2);
   return {
     props: {
-      issues,
+      issues: i,
     },
   };
 };
