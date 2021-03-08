@@ -80,7 +80,7 @@ export default ({ issues }) => {
             </ul>
           </div>
         </section>
-        {/* <section className="container mx-auto py-5 px-4">
+        <section className="container mx-auto py-5 px-4">
           <h2 className="leading-loose text-xl md:text-3xl lg:p-0 text-indigo-200 font-mono">
             Issues
           </h2>
@@ -101,7 +101,7 @@ export default ({ issues }) => {
               </li>
             ))}
           </ul>
-        </section> */}
+        </section>
       </main>
       <footer
         className="bg-fixed bg-cover bg-center bg-no-repeat flex justify-center items-center h-screen"
@@ -111,11 +111,11 @@ export default ({ issues }) => {
   );
 };
 
-// export const getStaticProps = async () => {
-//   const issues = await gitlab.Issues.all(2);
-//   return {
-//     props: {
-//       issues,
-//     },
-//   };
-// };
+export const getStaticProps = async () => {
+  const issues = await gitlab.Issues.all(2);
+  return {
+    props: {
+      issues,
+    },
+  };
+};
