@@ -59,6 +59,10 @@ body,
   background-color: #024ea0;
 }
 
+.link.aws:hover {
+  background-color: #232f3e;
+}
+
 .link.home {
   color: #fff;
 }

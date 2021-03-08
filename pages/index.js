@@ -53,21 +53,25 @@ export default ({ issues }) => {
           <div className="leading-loose text-base md:text-3xl lg:text-5xl lg:p-0">
             <ul>
               <li className="lg:text-6xl">
-                💻 Currently building{" "}
-                <a className="link gitlab" href="https://about.gitlab.com">
-                  GitLab
+                💻 Web Development Engineer at{" "}
+                <a className="link aws" href="https://aws.amazon.com/">
+                  AWS
                 </a>
               </li>
               <li>🎓 BA in Philosophy</li>
               <li>
                 🙌 Previously:{" "}
+                <a className="link gitlab" href="https://about.gitlab.com">
+                  GitLab
+                </a>
+                ,{" "}
                 <a
                   className="link digitalsurgeons"
                   href="https://digitalsurgeons.com"
                 >
                   Digital Surgeons
                 </a>
-                and{" "}
+                , and{" "}
                 <a className="link qscend" href="https://qscend.com">
                   QScend
                 </a>
@@ -76,7 +80,7 @@ export default ({ issues }) => {
             </ul>
           </div>
         </section>
-        <section className="container mx-auto py-5 px-4">
+        {/* <section className="container mx-auto py-5 px-4">
           <h2 className="leading-loose text-xl md:text-3xl lg:p-0 text-indigo-200 font-mono">
             Issues
           </h2>
@@ -97,7 +101,7 @@ export default ({ issues }) => {
               </li>
             ))}
           </ul>
-        </section>
+        </section> */}
       </main>
       <footer
         className="bg-fixed bg-cover bg-center bg-no-repeat flex justify-center items-center h-screen"
@@ -107,11 +111,11 @@ export default ({ issues }) => {
   );
 };
 
-export const getStaticProps = async () => {
-  const issues = await gitlab.Issues.all(2);
-  return {
-    props: {
-      issues,
-    },
-  };
-};
+// export const getStaticProps = async () => {
+//   const issues = await gitlab.Issues.all(2);
+//   return {
+//     props: {
+//       issues,
+//     },
+//   };
+// };
