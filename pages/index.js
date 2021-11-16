@@ -80,43 +80,7 @@ export default ({ issues }) => {
             </ul>
           </div>
         </section>
-        {/* <section className="container mx-auto py-5 px-4">
-          <h2 className="leading-loose text-xl md:text-3xl lg:p-0 text-indigo-200 font-mono">
-            Issues
-          </h2>
-          <ul className="md:text-3xl lg:px-0">
-            {issues.map((issue) => (
-              <li key={issue.iid}>
-                <Link
-                  href="/issue/[title]"
-                  as={`/issue/${slugify(issue.title)}`}
-                >
-                  <a className="block mt-1 leading-tight font-semibold hover:underline">
-                    #{issue.id}: {issue.title}
-                  </a>
-                </Link>
-                <date className="text-base md:text-lg">
-                  {strftime(" %B %d, %Y", new Date(issue.created_at))}
-                </date>
-              </li>
-            ))}
-          </ul>
-        </section>
       </main>
-      <footer
-        className="bg-fixed bg-cover bg-center bg-no-repeat flex justify-center items-center h-screen"
-        style={{ backgroundImage: "url(/jake-burden-presenting.jpg)" }}
-      ></footer> */}
     </>
   );
 };
-
-// export const getStaticProps = async () => {
-//   const issues = await gitlab.Issues.all(2);
-//   let i = issues.filter((issue) => issue.project_id === 2);
-//   return {
-//     props: {
-//       issues: i,
-//     },
-//   };
-// };
