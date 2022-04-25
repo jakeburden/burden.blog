@@ -2,8 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "highlight.js/styles/tomorrow-night-eighties.css";
-
 html,
 body {
   box-sizing: border-box;
@@ -11,6 +9,9 @@ body {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   height: 100%;
+  font-family: halyard-display, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
 }
 
 html,

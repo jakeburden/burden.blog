@@ -1,11 +1,6 @@
-// import gitlab from "../utils/gitlab";
-
-import Link from "next/link";
 import Head from "next/head";
-import slugify from "@sindresorhus/slugify";
-import strftime from "strftime";
 
-export default ({ issues }) => {
+export default () => {
   return (
     <>
       <Head>
