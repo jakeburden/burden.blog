@@ -9,9 +9,8 @@ body {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   height: 100%;
-  font-family: halyard-display, -apple-system, BlinkMacSystemFont, Segoe UI,
-    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 html,
@@ -71,6 +70,10 @@ body,
 .link.home:hover {
   background-color: #fff;
   color: #111;
+}
+
+.link.asymmetric:hover {
+  background: linear-gradient(to right, #30cfd0, #c43ad6);
 }
 
 /* Global */

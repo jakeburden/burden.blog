@@ -48,14 +48,21 @@ export default () => {
           <div className="leading-loose text-base md:text-3xl lg:text-5xl lg:p-0">
             <ul>
               <li className="lg:text-6xl">
-                💻 Web Development Engineer at{" "}
-                <a className="link aws" href="https://aws.amazon.com/">
-                  AWS
+                💻 Building web3 at{" "}
+                <a
+                  className="link asymmetric"
+                  href="https://asymmetric.financial"
+                >
+                  Asymmetric
                 </a>
               </li>
               <li>🎓 BA in Philosophy</li>
               <li>
                 🙌 Previously:{" "}
+                <a className="link aws" href="https://aws.amazon.com/">
+                  AWS
+                </a>
+                ,{" "}
                 <a className="link gitlab" href="https://about.gitlab.com">
                   GitLab
                 </a>
