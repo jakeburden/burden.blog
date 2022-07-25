@@ -32,7 +32,7 @@
     "highlight.js": "^9.18.1",
     "isomorphic-unfetch": "^3.0.0",
     "jsdom": "^16.2.1",
-    "marked": "^0.8.0",
+    "marked": "^4.0.10",
     "next": "^9.3.0",
     "next-absolute-url": "^1.2.2",
     "postcss-import": "^12.0.1",
